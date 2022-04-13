@@ -1,0 +1,8 @@
+8 black
+350 blue
+45,4 red
+450 CyAn
+yellow 150
+67 yellOY
+45 blue
+100 MAGENTA
