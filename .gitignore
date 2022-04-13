@@ -1,0 +1,22 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/../../../../../../:\Users\Андрей\IdeaProjects\codewars\.idea/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+target/
+.idea/
+.idea
+.repository/
+*.iml
+*.iws
+*.info
+*.properties
+*.jar
+*.png
+
+/out/
+/out.log
+/out.log.*
