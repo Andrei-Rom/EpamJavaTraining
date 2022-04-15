@@ -8,17 +8,17 @@ import java.util.Scanner;
 
 public class FileReader {
 
-    public List<String> readFile (String fileName){
+    public List<String> readFile(String fileName) {
         FileValidator validator = new FileValidator();
         List<String> lines = new ArrayList<>();
-        if (validator.isFileExistStream(fileName)){
-            Scanner scanner  = null;
+        if (validator.isFileExistStream(fileName)) {
+            Scanner scanner = null;
             try {
                 scanner = new Scanner(new File(fileName));
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             }
-            while (scanner.hasNext()){
+            while (scanner.hasNext()) {
                 String line = scanner.nextLine();
                 lines.add(line);
             }

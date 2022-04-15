@@ -7,13 +7,11 @@ import by.epam.tasks.task1.service.BallService;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+
 import static org.testng.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
-
 
 
 public class BallServiceTest {
@@ -59,6 +57,7 @@ public class BallServiceTest {
     public void testCalculateQuantityOfBallsByColor() {
         assertEquals(ballService.calculateQuantityOfBallsByColor(basket, Color.CYAN), 110);
     }
+
     @Test
     public void testCalculateQuantityOfBallsByColorStream() {
         assertEquals(ballService.calculateQuantityOfBallsByColorStream(basket, Color.CYAN), 110);

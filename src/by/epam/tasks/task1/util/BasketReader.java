@@ -18,7 +18,7 @@ public class BasketReader {
                 String weight = strings[0];
                 String color = strings[1];
 
-                if (new WeightValidator().checkNumber(weight) && new ColorUntil().isValidColor(color)) {
+                if (new WeightValidator().checkNumber(weight) && new ColorValidator().isValidColor(color)) {
                     balls.add(new Ball(Integer.parseInt(weight), Color.valueOf(color)));
                 }
             }

@@ -1,6 +1,6 @@
 package test.by.epam.tasks.task1.util;
 
-import by.epam.tasks.task1.util.ColorUntil;
+import by.epam.tasks.task1.util.ColorValidator;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -10,11 +10,11 @@ import static org.testng.Assert.assertTrue;
 
 public class ColorUtilTest {
 
-    ColorUntil colorUntil;
+    ColorValidator colorUntil;
 
     @BeforeMethod
     public void setUp() {
-        colorUntil = new ColorUntil();
+        colorUntil = new ColorValidator();
     }
 
     @Test

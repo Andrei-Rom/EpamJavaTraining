@@ -14,7 +14,7 @@ public class Basket {
         this.balls = balls;
     }
 
-    public void setBall (Ball ball) {
+    public void setBall(Ball ball) {
         this.balls.add(ball);
     }
 
