@@ -1,5 +1,6 @@
 package test.by.epam.tasks.task1.util;
 
+import by.epam.tasks.task1.util.ColorRandomizer;
 import by.epam.tasks.task1.util.ColorValidator;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -11,10 +12,12 @@ import static org.testng.Assert.assertTrue;
 public class ColorUtilTest {
 
     ColorValidator colorUntil;
+    ColorRandomizer colorRandomizer;
 
     @BeforeMethod
     public void setUp() {
         colorUntil = new ColorValidator();
+        colorRandomizer = new ColorRandomizer();
     }
 
     @Test
@@ -34,7 +37,7 @@ public class ColorUtilTest {
 
     @Test
     public void testGetRandomColor(){
-        assertTrue(colorUntil.isValidColor(colorUntil.getRandomColor().toString()));
+        assertTrue(colorUntil.isValidColor(colorRandomizer.getRandomColor().toString()));
     }
 
 
