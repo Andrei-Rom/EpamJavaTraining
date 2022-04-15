@@ -1,4 +1,4 @@
-package by.epam.tasks.task2.entity;
+package by.epam.tasks.task1.entity;
 
 import java.util.StringJoiner;
 

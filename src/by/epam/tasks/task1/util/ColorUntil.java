@@ -1,6 +1,6 @@
-package by.epam.tasks.task2.util;
+package by.epam.tasks.task1.util;
 
-import by.epam.tasks.task2.entity.Color;
+import by.epam.tasks.task1.entity.Color;
 
 import java.util.Arrays;
 import java.util.Random;
