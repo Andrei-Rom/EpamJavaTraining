@@ -3,7 +3,7 @@ package test.by.epam.tasks.task2.sort;
 
 import by.epam.tasks.task2.entity.CustomArray;
 import by.epam.tasks.task2.util.sort.BubbleSort;
-import by.epam.tasks.task2.util.sort.CountingSort;
+import by.epam.tasks.task2.util.sort.HeapSort;
 import by.epam.tasks.task2.util.sort.InsertionSort;
 import by.epam.tasks.task2.util.sort.SelectionSort;
 
@@ -30,9 +30,9 @@ public class SortTest {
     }
 
     @Test
-    public void testCountingSort() {
-        CountingSort countingSort = new CountingSort();
-        sortTest(countingSort.sort(customArray));
+    public void testHeapSort() {
+        HeapSort heapSort = new HeapSort();
+        sortTest(heapSort.sort(customArray));
     }
 
     @Test

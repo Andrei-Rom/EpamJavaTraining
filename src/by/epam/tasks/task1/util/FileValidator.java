@@ -1,14 +1,20 @@
 package by.epam.tasks.task1.util;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.stream.Stream;
 
 public class FileValidator {
+    public static void main(String[] args) {
+        System.out.println(new FileValidator().isFileExistStream("array.txt"));
+    }
 
     public boolean isFileExistStream(String fileName) {
-        Path path = Path.of("\\data");
+        String root = System.getProperty("user.dir");
+        String filePath = root+ File.separator+"data";
+        Path path = Path.of(filePath); //нужно
         Path pathResolve = path.resolve(fileName);
         Stream<Path> pathStream = null;
         boolean match = false;
@@ -28,7 +34,9 @@ public class FileValidator {
     }
 
     public boolean isFileExist(String fileName) throws IOException {
-        Path path = Path.of("\\data");
+        String root = System.getProperty("user.dir");
+        String filePath = root+ File.separator+"data";
+        Path path = Path.of(filePath);
         Path pathResolve = path.resolve(fileName);
         Stream<Path> pathStream = Files.list(path);
         boolean match;

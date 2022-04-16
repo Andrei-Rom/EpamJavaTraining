@@ -2,6 +2,7 @@ package test.by.epam.tasks.task2.math;
 
 import by.epam.tasks.task2.entity.CustomArray;
 import by.epam.tasks.task2.util.math.CustomArrays;
+import by.epam.tasks.task2.util.reader.CustomArrayReader;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,8 +22,9 @@ public class CustomArraysTest {
 
     @Test
     public void testGetArrayFromFile() {
-        int[] expecteds = new int[]{25, 3, 18, -150, 22};
-        assertArrayEquals(expecteds, arrays.getArrayFromFile("array.txt").getArray());
+        int[] expecteds = new int[]{0, 25, 3, 18, -150, 22, -16, 52, 11, 1, 999};
+        CustomArrayReader reader = new CustomArrayReader();
+        assertArrayEquals(expecteds, reader.getArrayFromFile("array.txt").getArray());
     }
 
     @Test
@@ -39,7 +41,7 @@ public class CustomArraysTest {
 
     @Test
     public void testGetRandomArray() {
-        boolean test = arrays.getRandomArray().getClass().equals(customArray.getClass());
+        boolean test = arrays.getRandomArray(customArray.getSize()).getClass().equals(customArray.getClass());
         assertTrue(test);
     }
 
