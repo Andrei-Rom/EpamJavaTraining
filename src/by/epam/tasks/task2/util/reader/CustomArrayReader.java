@@ -7,7 +7,7 @@ import java.util.List;
 
 public class CustomArrayReader {
 
-  // any positive and negative integers, zero, excluding -0
+    // any positive and negative integers, zero, excluding -0
     public static final String REGEX = "-?[1-9]\\d*|0";
 
     public CustomArray getArrayFromFile(String fileName) {

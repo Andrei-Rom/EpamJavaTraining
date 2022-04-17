@@ -1,4 +1,4 @@
-package test.by.epam.tasks.task2.sort;
+package test.by.epam.tasks.task2.util.sort;
 
 
 import by.epam.tasks.task2.entity.CustomArray;

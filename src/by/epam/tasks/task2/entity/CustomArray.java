@@ -1,23 +1,23 @@
 package by.epam.tasks.task2.entity;
 
-import jdk.internal.util.ArraysSupport;
-
 import java.util.Arrays;
 import java.util.StringJoiner;
 
 public class CustomArray {
     private static final int DEFAULT_CAPACITY = 10;
     private static final int[] EMPTY_ARRAY = {};
-    private static final int[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
+    private static final int[] DEFAULTCAPACITY_EMPTY_ARRAY = {};
     private int[] array;
     private int size;
 
     public CustomArray() {
         this.array = new int[DEFAULT_CAPACITY];
+        this.size = 0;
     }
 
     public CustomArray(int[] array) {
         this.array = array;
+        this.size = array.length;
     }
 
     public CustomArray(int initialCapacity) {
@@ -32,6 +32,11 @@ public class CustomArray {
     }
 
     public int[] getArray() {
+        if (size < array.length) {
+            array = (size == 0)
+                    ? EMPTY_ARRAY
+                    : Arrays.copyOf(array, size);
+        }
         return array;
     }
 
@@ -43,9 +48,8 @@ public class CustomArray {
         return size;
     }
 
-    public boolean add(int e) {
+    public void add(int e) {
         add(e, array, size);
-        return true;
     }
 
     private void add(int e, int[] array, int s) {
@@ -61,7 +65,7 @@ public class CustomArray {
 
     private int[] grow(int minCapacity) {
         int oldCapacity = array.length;
-        if (oldCapacity > 0 || array != DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
+        if (oldCapacity > 0 || array != DEFAULTCAPACITY_EMPTY_ARRAY) {
             int newCapacity = CustomArray.newLength(oldCapacity,
                     minCapacity - oldCapacity, /* minimum growth */
                     oldCapacity >> 1           /* preferred growth */);
