@@ -6,10 +6,25 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 public class CustomArrays {
-    public boolean isElementExist(int element, CustomArray array) {
-        int[] arr = array.getArray();
-        for (int j : arr) {
-            if (j == element) return true;
+    public boolean isElementExist(CustomArray array, int number) {
+        return binarySearch(array.getArray(), number);
+    }
+
+    public static boolean binarySearch(int[] input, int number) {
+        input = Arrays.stream(input).sorted().toArray();
+        int first = 0;
+        int last = input.length - 1;
+        int middle = (first + last) / 2;
+
+        while (first <= last) {
+            if (input[middle] < number) {
+                first = middle + 1;
+            } else if (input[middle] == number) {
+                return true;
+            } else {
+                last = middle - 1;
+            }
+            middle = (first + last) / 2;
         }
         return false;
     }

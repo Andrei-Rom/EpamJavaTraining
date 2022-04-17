@@ -12,14 +12,14 @@ public class CustomArraysTest {
 
     @BeforeEach
     public void setUp() {
-        int[] array = new int[]{1, 2, 3, 14, 25, 610, -35, 0, 170, -18, -315, 89, 197};
+        int[] array = new int[]{1, 2, 3, 14, 25, 610, -35, 610, 0, 170, -18, -315, 89, 197};
         customArray = new CustomArray(array);
         arrays = new CustomArrays();
     }
 
     @Test
     public void testGetFibonacciNumbers() {
-        int[] expecteds = new int[]{1, 2, 3, 610, 0, 89};
+        int[] expecteds = new int[]{1, 2, 3, 610, 610, 0, 89};
         Assertions.assertArrayEquals(expecteds, arrays.getFibonacciNumbers(customArray).getArray());
     }
 
@@ -37,13 +37,18 @@ public class CustomArraysTest {
 
     @Test
     public void testGetThreeDigitNumberOfUniqueDigits() {
-        int[] expecteds = new int[]{610, 170, -315, 197};
+        int[] expecteds = new int[]{610, 610, 170, -315, 197};
         Assertions.assertArrayEquals(expecteds, arrays.getThreeDigitNumberOfUniqueDigits(customArray).getArray());
     }
 
     @Test
-    public void testIsElementExist() {
-        Assertions.assertTrue(arrays.isElementExist(170, customArray));
+    public void testIsElementExist1() {
+        Assertions.assertTrue(arrays.isElementExist(customArray, 170));
+    }
+
+    @Test
+    public void testIsElementExist2() {
+        Assertions.assertFalse(arrays.isElementExist(customArray, 1010));
     }
 
     @Test
