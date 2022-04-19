@@ -1,11 +1,11 @@
 package test.by.epam.tasks.task2.util.sort;
 
 
-import by.epam.tasks.task2.entity.CustomArray;
-import by.epam.tasks.task2.util.sort.BubbleSort;
-import by.epam.tasks.task2.util.sort.HeapSort;
-import by.epam.tasks.task2.util.sort.InsertionSort;
-import by.epam.tasks.task2.util.sort.SelectionSort;
+import main.by.epam.tasks.task2.entity.CustomArray;
+import main.by.epam.tasks.task2.util.sort.BubbleSort;
+import main.by.epam.tasks.task2.util.sort.HeapSort;
+import main.by.epam.tasks.task2.util.sort.InsertionSort;
+import main.by.epam.tasks.task2.util.sort.SelectionSort;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,25 +26,29 @@ public class SortTest {
     @Test
     public void testBubbleSort() {
         BubbleSort bubbleSort = new BubbleSort();
-        sortTest(bubbleSort.sort(customArray));
+        bubbleSort.sort(customArray);
+        sortTest(customArray);
     }
 
     @Test
     public void testHeapSort() {
         HeapSort heapSort = new HeapSort();
-        sortTest(heapSort.sort(customArray));
+        heapSort.sort(customArray);
+        sortTest(customArray);
     }
 
     @Test
     public void testInsertionSort() {
         InsertionSort insertionSort = new InsertionSort();
-        sortTest(insertionSort.sort(customArray));
+        insertionSort.sort(customArray);
+        sortTest(customArray);
     }
 
     @Test
     public void testSelectionSort() {
         SelectionSort selectionSort = new SelectionSort();
-        sortTest(selectionSort.sort(customArray));
+        selectionSort.sort(customArray);
+        sortTest(customArray);
     }
 
     private void sortTest(CustomArray actual) {

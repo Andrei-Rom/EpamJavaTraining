@@ -1,24 +1,22 @@
 package test.by.epam.tasks.task1.service;
 
-import by.epam.tasks.task1.entity.Ball;
-import by.epam.tasks.task1.entity.Basket;
-import by.epam.tasks.task1.entity.Color;
-import by.epam.tasks.task1.service.BallService;
+import main.by.epam.tasks.task1.entity.Ball;
+import main.by.epam.tasks.task1.entity.Basket;
+import main.by.epam.tasks.task1.entity.Color;
+import main.by.epam.tasks.task1.service.BallService;
 
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
-
-import static org.testng.Assert.assertEquals;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class BallServiceTest {
     Basket basket;
     BallService ballService;
 
-    @BeforeMethod
+    @BeforeEach
     public void setUp() {
         basket = new Basket();
         List<Ball> balls = new ArrayList<>();
@@ -35,32 +33,32 @@ public class BallServiceTest {
 
     @Test
     public void testCalculateBasketWeight() {
-        assertEquals(ballService.calculateBasketWeight(basket), 236);
+        Assertions.assertEquals(236, ballService.calculateBasketWeight(basket));
     }
 
     @Test
     public void testCalculateBasketWeightStream() {
-        assertEquals(ballService.calculateBasketWeightStream(basket), 236);
+        Assertions.assertEquals(236, ballService.calculateBasketWeightStream(basket));
     }
 
     @Test
     public void testCalculateWeightByColor() {
-        assertEquals(ballService.calculateWeightByColor(basket, Color.BLACK), 26);
+        Assertions.assertEquals(26, ballService.calculateWeightByColor(basket, Color.BLACK));
     }
 
     @Test
     public void testCalculateWeightByColorStream() {
-        assertEquals(ballService.calculateWeightByColorStream(basket, Color.BLACK), 26);
+        Assertions.assertEquals(26, ballService.calculateWeightByColorStream(basket, Color.BLACK));
     }
 
     @Test
     public void testCalculateQuantityOfBallsByColor() {
-        assertEquals(ballService.calculateQuantityOfBallsByColor(basket, Color.CYAN), 110);
+        Assertions.assertEquals(2, ballService.calculateQuantityOfBallsByColor(basket, Color.CYAN));
     }
 
     @Test
     public void testCalculateQuantityOfBallsByColorStream() {
-        assertEquals(ballService.calculateQuantityOfBallsByColorStream(basket, Color.CYAN), 110);
+        Assertions.assertEquals(2,ballService.calculateQuantityOfBallsByColorStream(basket, Color.CYAN));
     }
 
 }

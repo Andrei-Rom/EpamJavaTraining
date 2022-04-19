@@ -1,12 +1,11 @@
 package test.by.epam.tasks.task1.util;
 
-import by.epam.tasks.task1.util.ColorRandomizer;
-import by.epam.tasks.task1.util.ColorValidator;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Test;
+import main.by.epam.tasks.task1.util.ColorRandomizer;
+import main.by.epam.tasks.task1.util.ColorValidator;
 
-import static org.testng.Assert.assertFalse;
-import static org.testng.Assert.assertTrue;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 
 public class ColorUtilTest {
@@ -14,7 +13,7 @@ public class ColorUtilTest {
     ColorValidator colorUntil;
     ColorRandomizer colorRandomizer;
 
-    @BeforeMethod
+    @BeforeEach
     public void setUp() {
         colorUntil = new ColorValidator();
         colorRandomizer = new ColorRandomizer();
@@ -22,22 +21,22 @@ public class ColorUtilTest {
 
     @Test
     public void testIsValidColor1(){
-        assertTrue(colorUntil.isValidColor("blue"));
+        Assertions.assertTrue(colorUntil.isValidColor("blue"));
     }
 
     @Test
     public void testIsValidColor2(){
-        assertTrue(colorUntil.isValidColor("BlAcK"));
+        Assertions.assertTrue(colorUntil.isValidColor("BlAcK"));
     }
 
     @Test
     public void testIsValidColor3(){
-        assertFalse(colorUntil.isValidColor("graph1te"));
+        Assertions.assertFalse(colorUntil.isValidColor("graph1te"));
     }
 
     @Test
     public void testGetRandomColor(){
-        assertTrue(colorUntil.isValidColor(colorRandomizer.getRandomColor().toString()));
+        Assertions.assertTrue(colorUntil.isValidColor(colorRandomizer.getRandomColor().toString()));
     }
 
 

@@ -1,7 +1,7 @@
 package test.by.epam.tasks.task2.util.math;
 
-import by.epam.tasks.task2.entity.CustomArray;
-import by.epam.tasks.task2.util.math.CustomArrays;
+import main.by.epam.tasks.task2.entity.CustomArray;
+import main.by.epam.tasks.task2.util.math.CustomArrays;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -53,11 +53,11 @@ public class CustomArraysTest {
 
     @Test
     public void testMax() {
-        Assertions.assertEquals(610, arrays.max(customArray));
+        Assertions.assertEquals(610, arrays.getMax(customArray));
     }
 
     @Test
     public void testMin() {
-        Assertions.assertEquals(-315, arrays.min(customArray));
+        Assertions.assertEquals(-315, arrays.getMin(customArray));
     }
 }
