@@ -10,7 +10,7 @@ public class FileValidator {
 
     public boolean isFileExistStream(String fileName) {
         String root = System.getProperty("user.dir");
-        String filePath = root + File.separator + "data";
+        String filePath = root + File.separator + "resources" + File.separator + "data";
         Path path = Path.of(filePath);
         Path pathResolve = path.resolve(fileName);
         Stream<Path> pathStream = null;
