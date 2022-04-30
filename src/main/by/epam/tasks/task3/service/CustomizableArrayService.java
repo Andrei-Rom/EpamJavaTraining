@@ -21,7 +21,4 @@ public class CustomizableArrayService {
     public int findSum(CustomizableArray array) {
         return Arrays.stream(array.getArray()).sum();
     }
-
-
-
 }

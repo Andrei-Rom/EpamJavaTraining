@@ -11,7 +11,7 @@ public class CustomizableArraySummaryStatistics {
     public CustomizableArraySummaryStatistics() {
     }
 
-    public CustomizableArraySummaryStatistics(int min, int max, int average, int sum) {
+    public CustomizableArraySummaryStatistics(int min, int max, double average, int sum) {
         this.min = min;
         this.max = max;
         this.average = average;
